@@ -28,10 +28,11 @@ def handle_message(data):
              "username": data.get("username", "User"),
             "message": message_text,
             "timestamp": datetime.now().isoformat()
-        }, broadcast=True)
+        }, broadcast=True, include_self=False)
 
 if __name__ == "__main__":
     print("🚀 Starting chat server...")
     socketio.run(app, host="0.0.0.0", port=5000, allow_unsafe_werkzeug=True)
+
 
 
