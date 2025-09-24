@@ -279,7 +279,7 @@
             document.getElementById('chatInput').disabled = false;
             document.getElementById('sendBtn').disabled = false;
 
-            socket = io("http://localhost:5000");
+           socket = io("https://chylnx-chat.onrender.com");
 
             socket.on('connect', function () {
                 addSystemMessage("✅ Connected to chat server!");
@@ -350,5 +350,6 @@
         window.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
+
 
 </html>
