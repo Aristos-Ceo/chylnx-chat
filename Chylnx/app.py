@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)  # REMOVED template_folder parameter
 app.config['SECRET_KEY'] = "secret123"
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
 
 connected_users = {}
 
@@ -33,4 +33,5 @@ def handle_message(data):
 if __name__ == "__main__":
     print("🚀 Starting chat server...")
     socketio.run(app, host="0.0.0.0", port=5000, allow_unsafe_werkzeug=True)
+
 
