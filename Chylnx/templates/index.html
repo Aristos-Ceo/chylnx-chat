@@ -313,10 +313,10 @@
                     isSent: true
                 });
                 input.value = '';
-                socket.emit('message', {
-                    text: text,
-                    username: myUsername  // ← ADD THIS LINE
-                });
+               socket.emit('message', { 
+    text: text,
+    username: myUsername
+});
             }
         }
 
@@ -353,3 +353,4 @@
 
 
 </html>
+
